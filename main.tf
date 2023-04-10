@@ -1,13 +1,11 @@
-terraform {
-
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.57.1"
-    }
-  }
+module "course" {
+  source  = "./modules/dynamodb/eu-central-1"
+  context = module.label.context
+  name    = "course"
 }
 
-provider "aws" {
-  region  = "eu-central-1"
+module "author" {
+  source  = "./modules/dynamodb/eu-central-1"
+  context = module.label.context
+  name    = "author"
 }
