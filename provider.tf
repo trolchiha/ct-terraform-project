@@ -2,7 +2,7 @@ terraform {
 
   backend "s3" {
     bucket = "191115909623-terraform-cloud-technologies"
-    key = "main/dev/terraform.ftstate"
+    key    = "main/dev/terraform.ftstate"
     region = "eu-central-1"
 
   }
