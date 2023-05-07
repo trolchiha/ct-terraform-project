@@ -29,3 +29,19 @@ variable "name_courses" {
 variable "lambda_courses_role_arn" {
     type = string
 }
+
+variable "lambda_get_course_role_arn" {
+    type = string
+}
+
+variable "lambda_create_course_role_arn" {
+    type = string
+}
+
+variable "lambda_update_course_role_arn" {
+    type = string
+}
+
+variable "lambda_delete_course_role_arn" {
+    type = string
+}

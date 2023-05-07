@@ -4,6 +4,6 @@ variable "env" {
 }
 
 variable "instance_role_enabled" {
-    type = bool
-    default = true
+  type    = bool
+  default = true
 }
