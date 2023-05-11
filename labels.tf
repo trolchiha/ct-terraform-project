@@ -7,3 +7,10 @@ module "label" {
   environment = var.environment
 
 }
+
+module "label_api" {
+  source   = "cloudposse/label/null"
+
+  name = "api"
+  context = module.label.context
+}
