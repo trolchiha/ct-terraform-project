@@ -71,12 +71,12 @@ resource "aws_api_gateway_resource" "courses" {
   path_part   = var.names[1]
 }
 
-module "api-gateway-enable-cors-courses" {
-  source          = "squidfunk/api-gateway-enable-cors/aws"
-  version         = "0.3.3"
-  api_id          = aws_api_gateway_rest_api.this.id
-  api_resource_id = aws_api_gateway_resource.courses.id //api_resource_id - API resource identifier
-}
+# module "api-gateway-enable-cors-courses" {
+#   source          = "squidfunk/api-gateway-enable-cors/aws"
+#   version         = "0.3.3"
+#   api_id          = aws_api_gateway_rest_api.this.id
+#   api_resource_id = aws_api_gateway_resource.courses.id //api_resource_id - API resource identifier
+# }
 
 resource "aws_api_gateway_resource" "course" {
   rest_api_id = aws_api_gateway_rest_api.this.id               //rest_api_id - (Required) ID of the associated REST API and id - ID of the REST API
@@ -84,12 +84,12 @@ resource "aws_api_gateway_resource" "course" {
   path_part   = "{id}"
 }
 
-module "api-gateway-enable-cors-course" {
-  source          = "squidfunk/api-gateway-enable-cors/aws"
-  version         = "0.3.3"
-  api_id          = aws_api_gateway_rest_api.this.id
-  api_resource_id = aws_api_gateway_resource.course.id //api_resource_id - API resource identifier
-}
+# module "api-gateway-enable-cors-course" {
+#   source          = "squidfunk/api-gateway-enable-cors/aws"
+#   version         = "0.3.3"
+#   api_id          = aws_api_gateway_rest_api.this.id
+#   api_resource_id = aws_api_gateway_resource.course.id //api_resource_id - API resource identifier
+# }
 
 //get-all-courses
 
