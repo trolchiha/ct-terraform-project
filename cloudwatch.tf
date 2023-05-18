@@ -13,7 +13,8 @@ module "notify_slack" {
 
   lambda_function_name = module.notification_label.id
 
-  slack_webhook_url = var.slack_webhook_url
+  slack_webhook_url = "https://hooks.slack.com/services/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"
+  # var.slack_webhook_url
   slack_channel     = "aws-notification"
   slack_username    = "terraform-reporter"
 }
@@ -35,7 +36,7 @@ resource "aws_cloudwatch_metric_alarm" "this" {
   threshold           = "1"
   alarm_description   = "This metric monitors ${module.lambda.lambda_authors_function_name}"
   treat_missing_data  = "notBreaching"
-#   alarm_actions       = [module.notify_slack.slack_topic_arn]
+
   dimensions = {
     "FunctionName" = "${module.lambda.lambda_authors_function_name}"
   }
