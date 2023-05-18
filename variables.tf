@@ -12,3 +12,8 @@ variable "names" {
   type    = list
   default = ["authors", "courses", "course" ]
 }
+
+variable "slack_webhook_url" {
+    type = string
+    default = "default"
+}
