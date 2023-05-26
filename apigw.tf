@@ -9,8 +9,8 @@ resource "aws_api_gateway_rest_api" "this" {
 }
 
 resource "aws_api_gateway_resource" "authors" {
-  rest_api_id = aws_api_gateway_rest_api.this.id              //rest_api_id - (Required) ID of the associated REST API and id - ID of the REST API
-  parent_id   = aws_api_gateway_rest_api.this.root_resource_id //root_resource_id - Resource ID of the REST API's root
+  rest_api_id = aws_api_gateway_rest_api.this.id              
+  parent_id   = aws_api_gateway_rest_api.this.root_resource_id 
   path_part   = var.names[0]
 }
 
@@ -25,8 +25,8 @@ resource "aws_api_gateway_resource" "authors" {
 
 resource "aws_api_gateway_method" "get_all_authors" {
   http_method   = "GET"
-  resource_id   = aws_api_gateway_resource.authors.id //resource_id - (Required) API resource ID
-  rest_api_id   = aws_api_gateway_rest_api.this.id //rest_api_id - (Required) ID of the associated REST API
+  resource_id   = aws_api_gateway_resource.authors.id 
+  rest_api_id   = aws_api_gateway_rest_api.this.id 
   authorization = "NONE"
 }
 
@@ -78,8 +78,8 @@ resource "aws_lambda_permission" "get_all_authors" {
 }
 
 resource "aws_api_gateway_resource" "courses" {
-  rest_api_id = aws_api_gateway_rest_api.this.id              //rest_api_id - (Required) ID of the associated REST API and id - ID of the REST API
-  parent_id   = aws_api_gateway_rest_api.this.root_resource_id //root_resource_id - Resource ID of the REST API's root
+  rest_api_id = aws_api_gateway_rest_api.this.id              
+  parent_id   = aws_api_gateway_rest_api.this.root_resource_id 
   path_part   = var.names[1]
 }
 
@@ -91,8 +91,8 @@ resource "aws_api_gateway_resource" "courses" {
 # }
 
 resource "aws_api_gateway_resource" "course" {
-  rest_api_id = aws_api_gateway_rest_api.this.id               //rest_api_id - (Required) ID of the associated REST API and id - ID of the REST API
-  parent_id   = aws_api_gateway_resource.courses.id //root_resource_id - Resource ID of the REST API's root
+  rest_api_id = aws_api_gateway_rest_api.this.id               
+  parent_id   = aws_api_gateway_resource.courses.id 
   path_part   = "{id}"
 }
 
@@ -107,8 +107,8 @@ resource "aws_api_gateway_resource" "course" {
 
 resource "aws_api_gateway_method" "get_all_courses" {
   http_method   = "GET"
-  resource_id   = aws_api_gateway_resource.courses.id //resource_id - (Required) API resource ID
-  rest_api_id   = aws_api_gateway_rest_api.this.id //rest_api_id - (Required) ID of the associated REST API
+  resource_id   = aws_api_gateway_resource.courses.id 
+  rest_api_id   = aws_api_gateway_rest_api.this.id 
   authorization = "NONE"
 }
 
@@ -164,8 +164,8 @@ resource "aws_lambda_permission" "get_all_courses" {
 
 resource "aws_api_gateway_method" "get_course" {
   http_method   = "GET"
-  resource_id   = aws_api_gateway_resource.course.id //resource_id - (Required) API resource ID
-  rest_api_id   = aws_api_gateway_rest_api.this.id //rest_api_id - (Required) ID of the associated REST API
+  resource_id   = aws_api_gateway_resource.course.id 
+  rest_api_id   = aws_api_gateway_rest_api.this.id
   authorization = "NONE"
 }
 
@@ -227,8 +227,8 @@ resource "aws_lambda_permission" "get_course" {
 
 resource "aws_api_gateway_method" "create_course" {
   http_method   = "POST"
-  resource_id   = aws_api_gateway_resource.courses.id //resource_id - (Required) API resource ID
-  rest_api_id   = aws_api_gateway_rest_api.this.id //rest_api_id - (Required) ID of the associated REST API
+  resource_id   = aws_api_gateway_resource.courses.id
+  rest_api_id   = aws_api_gateway_rest_api.this.id
   authorization = "NONE"
 }
 
@@ -297,8 +297,8 @@ resource "aws_lambda_permission" "create_course" {
 
 resource "aws_api_gateway_method" "update_course" {
   http_method   = "PUT"
-  resource_id   = aws_api_gateway_resource.course.id //resource_id - (Required) API resource ID
-  rest_api_id   = aws_api_gateway_rest_api.this.id //rest_api_id - (Required) ID of the associated REST API
+  resource_id   = aws_api_gateway_resource.course.id 
+  rest_api_id   = aws_api_gateway_rest_api.this.id 
   authorization = "NONE"
 }
 
@@ -360,8 +360,8 @@ resource "aws_lambda_permission" "update_course" {
 
 resource "aws_api_gateway_method" "delete_course" {
   http_method   = "DELETE"
-  resource_id   = aws_api_gateway_resource.course.id //resource_id - (Required) API resource ID
-  rest_api_id   = aws_api_gateway_rest_api.this.id //rest_api_id - (Required) ID of the associated REST API
+  resource_id   = aws_api_gateway_resource.course.id де 
+  rest_api_id   = aws_api_gateway_rest_api.this.id 
   authorization = "NONE"
 }
 
